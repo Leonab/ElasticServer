@@ -1,6 +1,6 @@
-angular.module('searchApp',['elasticsearch','ngSanitize'])
+angular.module('searchApp',['elasticsearch','ngSanitize','searchService'])
 
-.controller('SearchResultsList',['$scope',function($scope){
+.controller('SearchResultsList',['$scope','searchService',function($scope, searchService){
 	
 	$scope.searchTerms = null;
 	$scope.noResults = false;
@@ -21,10 +21,10 @@ var resetResults = function(){
 	$scope.results.documentCountf = null;
 	$scope.noResults = false;
 	$scope.resultsPage = 0;
-}
+};
 
 	
-	$scope.search = function(){
+$scope.search = function(){
 		
 	resetResults();
 	
@@ -79,41 +79,7 @@ function(error){
 console.log(error.message);	
 $scope.isSearching = false;
 });
-}
+};
 
-}])
-
-
-.service('searchService',['$q','esFactory',function($q, esFactory){
-	var esClient = esFactory({
-		location: 'localhost:9200'
-	});
-	
-	this.search = function(searchTerms, resultsPage){
-		var deferred = $q.defer();
-		
-		esClient.search({
-			body :{
-				query :{
-					match : {
-						_all : searchTerms
-					}
-				}
-			},
-			from: resultsPage*10 
-		}).then(function(es_return){
-			deferred.resolve(es_return);
-		}, function(error){
-			deferred.reject(error);
-		});
-		return deferred.promise;
-	};
-	
-	this.formatResults = function(documents){
-		var formattedResults = [];
-		
-		documents.forEach(function(document){
-			
-		});
-	};
 }]);
+
