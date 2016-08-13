@@ -65,16 +65,17 @@ var getResults = function() {
 	
 	var totalHits = es_return.hits.total;
 	if(totalHits>0){
-		setTimeout(function(){
+		
 		$scope.results.documentCount = totalHits;
 		$scope.results.documents.push.apply($scope.results.documents, searchService.formatResults(es_return.hits.hits));
-		},300)
+		
 	}
 	else {
 		$scope.noResults = true;
 	}
 	$scope.isSearching = false;
 },
+
 function(error){
 console.log(error.message);	
 $scope.isSearching = false;

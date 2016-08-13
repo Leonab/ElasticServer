@@ -17,13 +17,13 @@
  
  <section class="results">
   <h1 class="search-title">
-   Results for <strong>{{results.searchTerms}}</strong>  {{results.documentCount}}
+   Results for <strong>{{results.searchTerms}}</strong>  ( {{results.documentCount}} )
   </h1>
   <p ng-if="noResults"> No results were found</p>
   
   <ul>
-   <li ng-repeat="book in results.documents">
-   <strong>{{book.title}}</strong>
+   <li ng-repeat="customer in results.documents">
+   <strong>{{customer.name}}</strong>
    <p>{{}}</p>
    </li>   
   </ul>
