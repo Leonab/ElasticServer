@@ -22,9 +22,9 @@
   <p ng-if="noResults"> No results were found</p>
   
   <ul>
-   <li ng-repeat="customer in results.documents">
-   <strong>{{customer.name}}</strong>
-   <p>{{}}</p>
+   <li ng-repeat="result in results.documents">
+   <strong>{{results.documents.index}}</strong>
+   <p>{{results.documents.name}}</p>
    </li>   
   </ul>
   

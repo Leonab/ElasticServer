@@ -32,8 +32,16 @@ angular.module('searchService',[])
 		var formattedResults = [];
 		
 		documents.forEach(function(document){
-			formattedResults = document;
-                        return document;
+		        
+			formattedResults = {
+			
+			id: document._id,
+			index: document._index,
+			name: document._source.name
+			};
+			console.log(formattedResults);
+			
+		return(formattedResults);
 		});
 	};
 }]);
