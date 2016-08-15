@@ -67,7 +67,7 @@ var getResults = function() {
 	if(totalHits>0){
 		
 		$scope.results.documentCount = totalHits;
-		$scope.results.documents.push.apply($scope.results.documents, searchService.formatResults(es_return.hits.hits));
+		$scope.results.documents.push(searchService.formatResults(es_return.hits.hits));
 		console.log($scope.results.documents);
 		
 	}

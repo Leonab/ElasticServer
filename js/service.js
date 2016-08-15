@@ -34,14 +34,17 @@ angular.module('searchService',[])
 		documents.forEach(function(document){
 		        
 			formattedResults = {
+			 name: document._source.name || document._source.user,
+			 index: document._index
 			
-			id: document._id,
-			index: document._index,
-			name: document._source.name
 			};
-			console.log(formattedResults);
+			
+			//JSON.stringify(formattedResults)
+			//angular.toJson(formattedResults);
+			console.log("yolo",formattedResults);
 			
 		return(formattedResults);
 		});
+		
 	};
 }]);
