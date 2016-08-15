@@ -23,8 +23,8 @@
   
   <ul>
    <li ng-repeat="document in results.documents">
-   <strong>{{results.documents[0].index}}</strong>
-   <p>{{results.documents[0].name}}</p>
+   <strong>{{document.name}}</strong>
+   <p>{{document.name || document.user}}</p>
    </li>   
   </ul>
   

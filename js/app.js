@@ -10,7 +10,7 @@ angular.module('searchApp',['elasticsearch','ngSanitize','searchService'])
 	$scope.results={
 		searchTerms: null,
 		documentCount: null,
-		documents: []
+		documents: {}
 	};
 
 
@@ -67,8 +67,7 @@ var getResults = function() {
 	if(totalHits>0){
 		
 		$scope.results.documentCount = totalHits;
-		$scope.results.documents.push(searchService.formatResults(es_return.hits.hits));
-		console.log($scope.results.documents);
+		$scope.results.documents.push.apply($scope.results.documents,searchService.formatResults(es_return.hits.hits));
 		
 	}
 	else {

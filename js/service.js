@@ -12,6 +12,7 @@ angular.module('searchService',[])
 		var deferred = $q.defer();
 		
 		esClient.search({
+		        //index : 'customer', 
 			body :{
 				query :{
 					match : {
@@ -33,18 +34,11 @@ angular.module('searchService',[])
 		
 		documents.forEach(function(document){
 		        
-			formattedResults = {
-			 name: document._source.name || document._source.user,
-			 index: document._index
+			formattedResults.push(document._source);
 			
-			};
-			
-			//JSON.stringify(formattedResults)
-			//angular.toJson(formattedResults);
-			console.log("yolo",formattedResults);
-			
-		return(formattedResults);
 		});
+		console.log("yolo",formattedResults);
+		return(formattedResults);
 		
 	};
 }]);
