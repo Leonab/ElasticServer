@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
 <head>
-<title> Elastic Angular Client</title>
+<title>Search Client</title>
 <meta charset="utf-8">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/app.css">
 
 </head>
@@ -11,7 +12,7 @@
  <div class="search-form">
   <form ng-submit="search()">
    <input type="text" ng-model="searchTerms" placeholder="Search" class="search-input">
-   <input type="submit" value="search" class="search-submit">
+   <input type="submit" value="search" class="btn btn-primary">
   </form>
  </div>
  
@@ -23,8 +24,9 @@
   
   <ul>
    <li ng-repeat="document in results.documents">
-   <strong>{{document.name}}</strong>
-   <p>{{document.name || document.user}}</p>
+   <strong>{{document.name || document.user}}</strong>
+   <p>{{document.body || document.name}}</p>
+   <br><br>
    </li>   
   </ul>
   

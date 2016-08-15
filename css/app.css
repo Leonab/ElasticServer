@@ -8,6 +8,11 @@ body{
 	color: #222;
 }
 
+ul
+{
+list-style-type: none;
+}
+
 .search-form{
 	position: relative;
 	overflow: visible;
