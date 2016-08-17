@@ -1,0 +1,16 @@
+{
+  "name": "Elasto",
+  "private": true,
+  "version": "0.0.0",
+  "description": "AngularJS based Elasticsearch server",
+  "repository": "https://github.com/Leonab/ElasticServer",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p process.env.PORT -c-1 ./public"
+  }
+}
