@@ -6,7 +6,7 @@ Icon?
 Thumbs.db
 
 # Node and related ecosystem
-# ==========================
+# ===========
 .nodemonignore
 .sass-cache/
 node_modules/
@@ -16,7 +16,7 @@ app/tests/coverage/
 coverage/
 
 # MEAN.js app and assets
-# ======================
+# ===========
 uploads
 #modules/users/client/img/profile/uploads
 *.pem
