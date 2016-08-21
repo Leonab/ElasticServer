@@ -39,13 +39,13 @@ logs/
 build/
 
 # Sublime editor
-# ==============
+# ==========
 .sublime-project
 *.sublime-project
 *.sublime-workspace
 
 # Eclipse project files
-# =====================
+# ==========
 .project
 .settings/
 .*.md.html
