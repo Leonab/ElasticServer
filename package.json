@@ -1,7 +1,7 @@
 {
   "name": "Elasto",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "AngularJS based Elasticsearch server",
   "repository": "https://github.com/Leonab/ElasticServer",
   "license": "MIT",
