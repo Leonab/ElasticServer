@@ -13,3 +13,7 @@ http-server -a localhost -p 3000 -c-1 --cors
 http.cors.enabled: true
 http.cors.allow-origin: "*"
 ```
+
+###ToDo###
+Add better UI
+Improve dependencies
